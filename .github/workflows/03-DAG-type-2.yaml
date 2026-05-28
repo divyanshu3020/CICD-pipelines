@@ -1,4 +1,4 @@
-name: DAG workflow steps
+name: DAG type-2 workflow steps
 
 on:
     workflow_dispatch:
