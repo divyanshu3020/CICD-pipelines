@@ -1,0 +1,17 @@
+name: PR triggering
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+    paths:
+      - "src/index.css"
+      - "!src/frontend.tsx"
+
+jobs:
+  checking-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: echo "hey there"
