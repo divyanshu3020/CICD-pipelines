@@ -6,7 +6,7 @@ import reactLogo from "./react.svg";
 export function App() {
   return (
     <>
-      <p>I fucking hate u E</p>
+      <p>I fucking hate u E and ill fucking forget u</p>
     </>
   );
 }
