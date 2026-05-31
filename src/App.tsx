@@ -6,7 +6,7 @@ import reactLogo from "./react.svg";
 export function App() {
   return (
     <>
-      <p>I like to win</p>
+      <p>I fucking hate u E</p>
     </>
   );
 }
