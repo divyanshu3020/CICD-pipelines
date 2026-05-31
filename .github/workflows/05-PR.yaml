@@ -6,8 +6,8 @@ on:
       - opened
       - reopened
     paths:
-      - "src/index.css"
-      - "!src/frontend.tsx"
+      - "!src/*.css"
+      - "src/*tsx"
 
 jobs:
   checking-pr:
