@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: checking scopes
         env:
-          STEP_VAR: STEP_LEVEL
+          STEP_VAR: STEP_1_LEVEL
         run: |
             echo "VAR_LEVEL_WF $WF_VAR"
             echo "VAR_LEVEL_JOB $JOB_VAR"
