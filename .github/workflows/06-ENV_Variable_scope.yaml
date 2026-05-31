@@ -5,29 +5,29 @@ on:
     branches: [jackal]
 
 env:
-  WF_VAR: WORKFLOW_LEVEL
+  GLOBAL_WF_VAR: "I am available everywhere"
 
 jobs:
   job-1:
     runs-on: ubuntu-latest
     env:
-      JOB_VAR: JOB_1_LEVEL
+      JOB_1_ONLY_VAR: "I am only inside Job 1"
     steps:
-      - name: checking scopes
+      - name: Testing Job 1 Scopes
         env:
-          STEP_VAR: STEP_1_LEVEL
+          STEP_1_ONLY_VAR: "I am only inside Step 1"
         run: |
-            echo "VAR_LEVEL_WF $WF_VAR"
-            echo "VAR_LEVEL_JOB $JOB_VAR"
-            echo "VAR_LEVEL_STEP-1 $STEP_VAR" 
+          echo "From Workflow Level: $GLOBAL_WF_VAR"
+          echo "From Job 1 Level: $JOB_1_ONLY_VAR"
+          echo "From Step 1 Level: $STEP_1_ONLY_VAR"
             
   job-2:
     runs-on: ubuntu-latest
     steps:
-      - name: checking scopes
+      - name: Testing Job 2 Scopes
         env:
-          STEP_VAR: STEP_LEVEL
+          STEP_2_ONLY_VAR: "I am only inside Step 2"
         run: |
-            echo "VAR_LEVEL_WF $WF_VAR"
-            echo "VAR_LEVEL_JOB $JOB_VAR"
-            echo "VAR_LEVEL_STEP-1 $STEP_VAR"
+          echo "From Workflow Level: $GLOBAL_WF_VAR"
+          echo "From Job 1 Level: $JOB_1_ONLY_VAR"
+          echo "From Step 2 Level: $STEP_2_ONLY_VAR"
