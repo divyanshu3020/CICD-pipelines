@@ -1,0 +1,33 @@
+name: ENV variable scope
+
+on:
+  push:
+    branches: [jackal]
+
+env:
+  WF_VAR: WORKFLOW_LEVEL
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: JOB_1_LEVEL
+    steps:
+      - name: checking scopes
+        env:
+          STEP_VAR: STEP_LEVEL
+        run: |
+            echo "VAR_LEVEL_WF $WF_VAR"
+            echo "VAR_LEVEL_JOB $JOB_VAR"
+            echo "VAR_LEVEL_STEP-1 $STEP_VAR" 
+            
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking scopes
+        env:
+          STEP_VAR: STEP_LEVEL
+        run: |
+            echo "VAR_LEVEL_WF $WF_VAR"
+            echo "VAR_LEVEL_JOB $JOB_VAR"
+            echo "VAR_LEVEL_STEP-1 $STEP_VAR"
